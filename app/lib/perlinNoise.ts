@@ -1,6 +1,5 @@
 import { createCanvas } from 'canvas';
 import { Noise } from 'noisejs';
-// import { writeFileSync } from 'fs';
 
 export async function generatePerlinNoise(farcasterId: number): Promise<Buffer | string> {
   const perlin = new Noise(farcasterId || Math.random());
@@ -11,12 +10,6 @@ export async function generatePerlinNoise(farcasterId: number): Promise<Buffer |
     // white background
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-
-    // ctx.fillStyle = 'red';
-    // ctx.fillRect(50, 50, 300, 300);
-
-
 
     const scale = 35;
 

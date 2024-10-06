@@ -12,7 +12,7 @@ const app = new Frog({
   assetsPath: '/',
   imageAspectRatio: '1:1',
   basePath: '/api',
-  title: 'Perlin Noise Frame',
+  title: 'perlin noise',
 });
 
 // Uncomment to use Edge Runtime
@@ -59,18 +59,18 @@ app.frame('/', async (c) => {
     image: (
       <img src="/mfer.png" />
     ),
+    imageOptions: { width: 600, height: 600},
     intents: [
       <TextInput placeholder="input farcaster id..." />,
-      <Button value="generate">Generate</Button>,
+      <Button value="generate">generate</Button>,
     ],
   });
 });
 
 // handle image req, serve noise image
 app.image('/image/:id', async (c) => {
-  // const { params } = c;
-  const id = c.req.param('id');
 
+  const id = c.req.param('id');
   
   const parsedId = parseInt(id, 10);
 
