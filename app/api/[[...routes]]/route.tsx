@@ -1,6 +1,6 @@
 /** @jsxImportSource frog/jsx */
 
-import { Button, Frog, ImageResponse, TextInput } from 'frog';
+import { Button, Frog, ImageResponse, CastActionHandler } from 'frog';
 import { devtools } from 'frog/dev';
 // import { neynar } from 'frog/hubs'
 import { handle } from 'frog/next';
@@ -15,22 +15,20 @@ const app = new Frog({
   title: 'perlin noise',
 });
 
-// Uncomment to use Edge Runtime
-// export const runtime = 'edge'
 
 app.frame('/', async (c) => {
-  const { inputText, status } = c;
-  const farcasterId = inputText?.trim();
+  
+  const fid = c.frameData?.fid;
 
   // if the button has been clicked
-  if (status === 'response' && farcasterId) {
+  if (c.status === 'response' && fid) {
 
     try {
 
       return c.res({
         // route to image on server
         image: (
-          <img src={`/api/image/${farcasterId}`} />
+          <img src={`/api/image/${fid}`} />
         ),
         intents: [<Button.Reset>Reset</Button.Reset>],
       });
@@ -61,7 +59,7 @@ app.frame('/', async (c) => {
     ),
     imageOptions: { width: 600, height: 600},
     intents: [
-      <TextInput placeholder="input farcaster id..." />,
+      // <TextInput placeholder="input farcaster id..." />,
       <Button value="generate">generate</Button>,
     ],
   });
