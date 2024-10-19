@@ -1,5 +1,5 @@
 import { createCanvas } from 'canvas';
-import { Noise } from 'noisejs';
+import Noise from 'noisejs';
 
 export async function generatePerlinNoise(farcasterId: number): Promise<Buffer | string> {
   const perlin = new Noise(farcasterId || Math.random());
