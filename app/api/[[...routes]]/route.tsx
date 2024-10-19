@@ -17,7 +17,7 @@ const app = new Frog({
 
 
 app.frame('/', async (c) => {
-  
+
   const fid = c.frameData?.fid;
 
   // if the button has been clicked
@@ -57,7 +57,7 @@ app.frame('/', async (c) => {
     image: (
       <img src="/mfer.png" />
     ),
-    imageOptions: { width: 600, height: 600},
+    imageOptions: { width: 600, height: 600 },
     intents: [
       // <TextInput placeholder="input farcaster id..." />,
       <Button value="generate">generate</Button>,
@@ -69,7 +69,7 @@ app.frame('/', async (c) => {
 app.image('/image/:id', async (c) => {
 
   const id = c.req.param('id');
-  
+
   const parsedId = parseInt(id, 10);
 
   const imageBuffer = await generatePerlinNoise(parsedId);

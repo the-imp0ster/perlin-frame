@@ -41,6 +41,9 @@ export async function generatePerlinNoise(farcasterId: number): Promise<Buffer |
 
     for (let x = 0; x < 400; x++) {
       for (let y = 0; y < 400; y++) {
+        // x & y: coordinates of the pixel
+        // scale: granularity of the noise
+        // returns a pseudorandom value between -1 - 1
         const value = perlin.perlin2(x / scale, y / scale);
         ctx.fillStyle = getColor(value);
         ctx.fillRect(x, y, 1, 1);
