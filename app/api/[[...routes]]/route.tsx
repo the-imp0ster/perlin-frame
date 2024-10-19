@@ -55,7 +55,7 @@ app.frame('/', async (c) => {
 
   return c.res({
     image: (
-      <img src="https://perlinframe.vercel.app/mfer.png" />
+      <img src="/mfer.png" />
     ),
     imageOptions: { width: 600, height: 600 },
     intents: [
