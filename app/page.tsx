@@ -18,20 +18,8 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>app/page.tsx</code>
-          </p>
-          <p>
-            Head to{' '}
-            <a
-              href="/api/dev"
-              style={{ display: 'inline', fontWeight: 'semibold' }}
-            >
-              <code className={styles.code}>localhost:3000/api</code>
-            </a>{' '}
-            for your frame endpoint.
-          </p>
+          
+          <p>perlin noise is a frame application only.</p>
         </div>
       </div>
     </main>
